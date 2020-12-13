@@ -1,11 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js" data-auto-a11y="true"></script>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
     <title>Yu-Gi-Oh! Attack - Duel Monsters</title>
 </head>
 <body>
-    
+    <div class="overlay">
+        <div class="modal-background start-game">
+            <div class="modal-body start-game-body">
+                <h2 class="modal-heading start-game-heading">Yu-Gi-Oh! Attack - Duel Monsters</h2>
+                <h3 class="start-game-instruct-heading">Instructions</h3>
+                <ol class="start-game-instructions">
+                    <li>Select a monster from your side.</li>
+                    <li>Select a monster from your opponent's side.</li>
+                    <li>Attack.</li>
+                </ol>
+                <p>To de-select cards at any time, click on cancel.</p>
+                <p>Your opponent (AI) then needs to complete their turn before you can attack again.</p>
+                <p>Whoever gets the other player's life points down to zero wins!</p>
+                <button class="start-game-button modal-button">Start</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="scripts/script.js"></script>
 </body>
 </html>

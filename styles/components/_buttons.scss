@@ -1,0 +1,20 @@
+//General Buttons
+button {
+  display: block;
+  padding: 1rem;
+  background: darken($color-blue,20);
+  color: $color-white;
+  transition: transform .2s;
+  border-radius: 0.5rem;
+  z-index: 10;
+  position: relative;
+  align-self: stretch;
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  button {
+    transform: scale(.9);
+    font-size: .7rem;
+  }
+}
