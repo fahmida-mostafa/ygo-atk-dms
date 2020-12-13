@@ -1,3 +1,4 @@
+@charset "UTF-8";
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
   display: block; }
 
@@ -159,6 +160,17 @@ ul {
   body {
     line-height: 1.2; } }
 
+.gameboard {
+  position: relative;
+  height: 100vh;
+  min-height: 31rem;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.25); }
+
+.gameboard-half {
+  height: 50%;
+  position: relative; }
+
 .modal-background {
   background: rgba(0, 0, 0, 0.4);
   position: absolute;
@@ -216,6 +228,14 @@ button {
   -ms-grid-row-align: stretch;
   align-self: stretch;
   cursor: pointer; }
+  button:disabled {
+    background: #ababab;
+    color: grey; }
+    button:disabled:hover, button:disabled:focus {
+      z-index: 0;
+      -webkit-transform: none;
+      -ms-transform: none;
+      transform: none; }
 
 @media (max-width: 500px) {
   button {
@@ -223,6 +243,159 @@ button {
     -ms-transform: scale(0.9);
     transform: scale(0.9);
     font-size: .7rem; } }
+
+.opponent-stats,
+.player-stats {
+  height: 3.6rem; }
+
+.stats-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.life-points, .atk-points {
+  width: 10rem;
+  height: 3.6rem;
+  font-size: 1.5rem;
+  text-align: center;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  margin: 0;
+  padding: 1rem 1.5rem;
+  border: 2px solid #000;
+  color: yellow;
+  background-image: -webkit-gradient(linear, left top, right top, from(blue), color-stop(#fff), to(purple));
+  background-image: -webkit-linear-gradient(left, blue, #fff, purple);
+  background-image: -o-linear-gradient(left, blue, #fff, purple);
+  background-image: linear-gradient(to right, blue, #fff, purple);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+@media (max-width: 650px) {
+  .opponent-stats-label, .player-stats-label {
+    font-size: 0.7rem;
+    margin: 1rem 0; }
+  .life-points, .atk-points {
+    width: 6rem;
+    font-size: 1rem;
+    text-align: center; } }
+
+.player-side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end; }
+
+.player-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  z-index: 0; }
+
+.player-button-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end; }
+
+.player-atk-button,
+.player-cancel-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.player-atk-button {
+  margin-right: .5rem; }
+  .player-atk-button::before {
+    content: "Attack"; }
+  .player-atk-button:hover, .player-atk-button:focus {
+    z-index: 1;
+    -webkit-transform: translate(-0.4rem, -0.2rem) scale(1.1);
+    -ms-transform: translate(-0.4rem, -0.2rem) scale(1.1);
+    transform: translate(-0.4rem, -0.2rem) scale(1.1); }
+
+.player-cancel-button::before {
+  content: "Cancel"; }
+
+.player-cancel-button:hover, .player-cancel-button:focus {
+  z-index: 1;
+  -webkit-transform: translate(0.4rem, -0.2rem) scale(1.1);
+  -ms-transform: translate(0.4rem, -0.2rem) scale(1.1);
+  transform: translate(0.4rem, -0.2rem) scale(1.1); }
+
+.player-stats-label {
+  position: absolute;
+  bottom: 2.6rem; }
+
+.player-atk-display-label {
+  right: 0; }
+
+@media (max-width: 800px) {
+  .player-atk-button {
+    width: 3.5rem;
+    height: 3.2rem; }
+    .player-atk-button::before {
+      content: "🗲"; }
+    .player-atk-button:hover, .player-atk-button:focus {
+      -webkit-transform: translate(-0.2rem, -0.2rem) scale(1.1);
+      -ms-transform: translate(-0.2rem, -0.2rem) scale(1.1);
+      transform: translate(-0.2rem, -0.2rem) scale(1.1); }
+  .player-cancel-button {
+    width: 3.5rem;
+    height: 3.2rem; }
+    .player-cancel-button::before {
+      content: "×"; }
+    .player-cancel-button:hover, .player-cancel-button:focus {
+      -webkit-transform: translate(0.2rem, -0.2rem) scale(1.1);
+      -ms-transform: translate(0.2rem, -0.2rem) scale(1.1);
+      transform: translate(0.2rem, -0.2rem) scale(1.1); } }
+
+.opponent-transition-delay {
+  -webkit-transition: .2s all 2s;
+  -o-transition: .2s all 2s;
+  transition: .2s all 2s; }
+
+.opponent-atk-display-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.opponent-stats-label {
+  top: 2.6rem;
+  position: absolute; }
+
+.opponent-atk-display-label {
+  right: 0; }
 
 .start-game {
   display: -webkit-box;

@@ -10,6 +10,16 @@ button {
   position: relative;
   align-self: stretch;
   cursor: pointer;
+    
+  &:disabled {
+    background: lighten($color-grey,17);
+    color: $color-grey;
+
+    &:hover, &:focus {
+      z-index: 0;
+      transform: none;
+    }
+  }
 }
 
 @media (max-width: 500px) {

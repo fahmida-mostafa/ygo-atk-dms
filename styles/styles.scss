@@ -1,6 +1,10 @@
 @import "./base/variables.scss";
 @import "./base/setup.scss";
 @import "./base/base.scss";
+@import "./layout/gameboard.scss";
 @import "./components/modal.scss";
 @import "./components/buttons.scss";
+@import "./components/stats.scss";
+@import "./sections/player-side.scss";
+@import "./sections/opponent-side.scss";
 @import "./sections/start-game.scss";
